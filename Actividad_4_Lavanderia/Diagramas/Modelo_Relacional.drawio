@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="0" dy="0" grid="0" gridSize="10" x="." y="." version="2.2.2">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    
+    <!-- Clientes table -->
+    <mxCell id="2" value="CLIENTES" style="rounded=1;whiteSpace=wrap;" parent="1" vAlign="top">
+      <mxGeometry x="100" y="80" width="160" height="100" as="geometry"/>
+    </mxCell>
+    
+    <!-- Clientes columns -->
+    <mxCell id="3" value="id_cliente INTEGER PRIMARY KEY" parent="2" vAlign="top">
+      <mxGeometry x="120" y="100" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="4" value="nombre TEXT NOT NULL" parent="2" vAlign="top">
+      <mxGeometry x="120" y="130" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="5" value="apellido TEXT NOT NULL" parent="2" vAlign="top">
+      <mxGeometry x="120" y="160" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="6" value="telefono TEXT" parent="2" vAlign="top">
+      <mxGeometry x="120" y="190" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="7" value="direccion TEXT" parent="2" vAlign="top">
+      <mxGeometry x="120" y="220" width="120" height="20" as="geometry"/>
+    </mxCell>
+    
+    <!-- Servicios table -->
+    <mxCell id="8" value="SERVICIOS" style="rounded=1;whiteSpace=wrap;" parent="1" vAlign="top">
+      <mxGeometry x="320" y="80" width="160" height="100" as="geometry"/>
+    </mxCell>
+    
+    <!-- Servicios columns -->
+    <mxCell id="9" value="id_servicio INTEGER PRIMARY KEY" parent="8" vAlign="top">
+      <mxGeometry x="340" y="100" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="10" value="nombre_servicio TEXT NOT NULL" parent="8" vAlign="top">
+      <mxGeometry x="340" y="130" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="descripcion TEXT" parent="8" vAlign="top">
+      <mxGeometry x="340" y="160" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" value="precio REAL NOT NULL CHECK(precio >= 0)" parent="8" vAlign="top">
+      <mxGeometry x="340" y="190" width="120" height="20" as="geometry"/>
+    </mxCell>
+    
+    <!-- Solicitudes table -->
+    <mxCell id="13" value="SOLICITUDES" style="rounded=1;whiteSpace=wrap;" parent="1" vAlign="top">
+      <mxGeometry x="540" y="80" width="160" height="100" as="geometry"/>
+    </mxCell>
+    
+    <!-- Solicitudes columns -->
+    <mxCell id="14" value="id_solicitud INTEGER PRIMARY KEY" parent="13" vAlign="top">
+      <mxGeometry x="560" y="100" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="15" value="id_cliente INTEGER FOREIGN KEY REFERENCES CLIENTES(id_cliente)" parent="13" vAlign="top">
+      <mxGeometry x="560" y="130" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="16" value="id_servicio INTEGER FOREIGN KEY REFERENCES SERVICIOS(id_servicio)" parent="13" vAlign="top">
+      <mxGeometry x="560" y="160" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="17" value="fecha TEXT NOT NULL" parent="13" vAlign="top">
+      <mxGeometry x="560" y="190" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="18" value="cantidad_prendas INTEGER NOT NULL CHECK(cantidad_prendas > 0)" parent="13" vAlign="top">
+      <mxGeometry x="560" y="220" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="19" value="total REAL NOT NULL CHECK(total >= 0)" parent="13" vAlign="top">
+      <mxGeometry x="560" y="250" width="120" height="20" as="geometry"/>
+    </mxCell>
+    
+    <!-- Foreign key lines -->
+    <mxCell id="20" value="" style="strokeColor=#000000;strokeWidth=2;" parent="1" source="2" target="13">
+      <mxGeometry width="100" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="21" value="" style="strokeColor=#000000;strokeWidth=2;" parent="1" source="8" target="13">
+      <mxGeometry x="440" y="130" width="100" height="20" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>
